@@ -1,0 +1,130 @@
+.notes-form {
+	display: grid;
+	width: min(100% - 2rem, 1100px);
+	grid-template-columns: minmax(0, 1fr);
+	gap: 0.9rem;
+	margin: 1.5rem auto;
+	padding: clamp(1.1rem, 3vw, 1.5rem);
+	border: 1px solid var(--border, #29364d);
+	border-radius: 14px;
+	background: linear-gradient(145deg, #151e31, #101827);
+	box-shadow: 0 10px 24px rgb(0 0 0 / 16%);
+}
+
+.notes-form__heading {
+	display: grid;
+	grid-column: 1 / -1;
+	gap: 0.2rem;
+}
+
+.notes-form__eyebrow {
+	color: #a5b4fc;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+}
+
+.notes-form__title {
+	margin: 0;
+	color: var(--text, #e6eaf2);
+	font-size: clamp(1.35rem, 3vw, 1.6rem);
+	line-height: 1.2;
+}
+
+.notes-form__intro {
+	margin: 0.2rem 0 0;
+	color: var(--muted, #9aa8bd);
+	font-size: 0.92rem;
+}
+
+.notes-form__field {
+	display: grid;
+	align-content: start;
+	gap: 0.35rem;
+}
+
+.notes-form__field label {
+	color: #d7deeb;
+	font-size: 0.88rem;
+	font-weight: 600;
+}
+
+.notes-form__field input,
+.notes-form__field textarea {
+	width: 100%;
+	min-width: 0;
+	padding: 0.65rem 0.8rem;
+	border: 1px solid var(--border, #29364d);
+	border-radius: 9px;
+	background: #0c1423;
+	color: var(--text, #e6eaf2);
+	font: inherit;
+	font-size: 0.92rem;
+	transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.notes-form__field textarea {
+	min-height: 84px;
+	resize: vertical;
+}
+
+.notes-form__field input::placeholder,
+.notes-form__field textarea::placeholder {
+	color: #718099;
+}
+
+.notes-form__field input:focus,
+.notes-form__field textarea:focus {
+	border-color: #818cf8;
+	outline: none;
+	box-shadow: 0 0 0 3px rgb(129 140 248 / 16%);
+}
+
+.notes-form__error {
+	grid-column: 1 / -1;
+	margin: 0;
+	padding: 0.75rem 0.9rem;
+	border: 1px solid rgb(248 113 113 / 35%);
+	border-radius: 9px;
+	background: rgb(127 29 29 / 18%);
+	color: #fca5a5;
+	font-size: 0.88rem;
+}
+
+.notes-form__submit {
+	display: flex;
+	min-height: 40px;
+	min-width: 140px;
+	justify-self: stretch;
+	grid-column: 1 / -1;
+	align-items: center;
+	justify-content: center;
+	gap: 0.55rem;
+	border: 0;
+	border-radius: 9px;
+	background: linear-gradient(110deg, #7c6cf2, #6366f1);
+	color: #fff;
+	font-size: 0.92rem;
+	font-weight: 700;
+	padding: 0 1rem;
+	box-shadow: 0 7px 18px rgb(99 102 241 / 25%);
+	transition: filter 150ms ease, transform 150ms ease;
+}
+
+.notes-form__submit:hover {
+	transform: translateY(-1px);
+	filter: brightness(1.1);
+}
+
+.notes-form__submit:active {
+	transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.notes-form__field input,
+	.notes-form__field textarea,
+	.notes-form__submit {
+		transition: none;
+	}
+}
+

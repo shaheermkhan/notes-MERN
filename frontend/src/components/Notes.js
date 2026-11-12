@@ -6,6 +6,7 @@ const Notes = ({ note, onNoteDeleted, onNoteUpdated }) => {
     const [isEditing, setIsEditing] = useState(false);
     const [title, setTitle] = useState(note.title);
     const [description, setDescription] = useState(note.description);
+    const [user, setUser] = useState(note.user);
     const [deleteError, setDeleteError] = useState('');
     const [isDeleting, setIsDeleting] = useState(false);
     const [editError, setEditError] = useState('');

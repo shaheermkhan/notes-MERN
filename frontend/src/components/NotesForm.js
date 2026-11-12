@@ -1,7 +1,7 @@
 import { useState } from "react"
 import './styles/NotesForm.css';
 
-const NotesForm = ({ onNoteCreated }) => {
+const NotesForm = ({ onNoteCreated, userId }) => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [error, setError] = useState('');
@@ -12,7 +12,7 @@ const NotesForm = ({ onNoteCreated }) => {
         try {
             const response = await fetch('http://localhost:4000/api/notes', {
                 method: 'POST',
-                body: JSON.stringify({ title, description }),
+                body: JSON.stringify({ title, description, user: userId }),
                 headers: { 'Content-Type': 'application/json' },
             });
             const contentType = response.headers.get('content-type') || '';

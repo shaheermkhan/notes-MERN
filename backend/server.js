@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 const notesRoutes = require('./routes/notes')
+const accountRoutes = require('./routes/account')
 
 const app = express()
 
@@ -16,6 +17,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/api/notes', notesRoutes)
+app.use('/api/account', accountRoutes)
 
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {

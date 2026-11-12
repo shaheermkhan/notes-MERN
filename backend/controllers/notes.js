@@ -27,10 +27,10 @@ const getSingleNote = async(req, res) => {
 }
 
 const createNote = async(req, res) => {
-    const {title, description} = req.body
+    const {title, description, user} = req.body
     
     try {
-        const note = await Note.create({title, description})
+        const note = await Note.create({title, description, user})
         res.status(200).json(note)
 
     } catch (error) {
